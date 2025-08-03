@@ -67,10 +67,10 @@
 
 @layer base {
   * {
-    border-border: (var(--border));
+    @apply border-solid;
   }
   body {
-    bg-background: (var(--background));
-    text-foreground: (var(--foreground));
+    @apply bg-white;
+    @apply text-black;
   }
 }
