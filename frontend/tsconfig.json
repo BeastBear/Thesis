@@ -9,9 +9,9 @@
     }
   ],
   "compilerOptions": {
-    "jsx": "react-jsx",         
+    "jsx": "react-jsx",
     "moduleResolution": "node",
-    "lib":["dom","esnext"],
+    "lib": ["dom", "esnext"],
     "types": ["react", "react-dom"],
     "baseUrl": ".",
     "paths": {

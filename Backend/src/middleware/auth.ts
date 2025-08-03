@@ -1,6 +1,6 @@
 import { auth } from "express-oauth2-jwt-bearer";
-import { Request, Response, NextFunction } from "express"
-import jwt from 'jsonwebtoken'
+import { Request, Response, NextFunction } from "express";
+import jwt from "jsonwebtoken";
 import User from "../models/user";
 
 declare global {
@@ -15,17 +15,17 @@ declare global {
 export const jwtCheck = auth({
   audience: process.env.AUTH0_AUDIENCE,
   issuerBaseURL: process.env.AUTH0_ISSUER_BASE_URL,
-  tokenSigningAlg: 'RS256'
+  tokenSigningAlg: "RS256",
 });
 
-export const jwtParse = async(
-  req: Request, 
-  res: Response, 
+export const jwtParse = async (
+  req: Request,
+  res: Response,
   next: NextFunction
 ) => {
   const { authorization } = req.headers;
 
-  if( !authorization || !authorization.startsWith("Bearer ")) {
+  if (!authorization || !authorization.startsWith("Bearer ")) {
     return res.sendStatus(401);
   }
 
@@ -35,9 +35,9 @@ export const jwtParse = async(
     const decoded = jwt.decode(token) as jwt.JwtPayload;
     const auth0Id = decoded.sub;
 
-    const user = await User.findOne({ auth0Id })
+    const user = await User.findOne({ auth0Id });
 
-    if(!user){
+    if (!user) {
       return res.sendStatus(401);
     }
 
@@ -48,4 +48,3 @@ export const jwtParse = async(
     return res.sendStatus(401);
   }
 };
-
