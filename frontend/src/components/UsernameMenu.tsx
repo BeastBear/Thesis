@@ -24,7 +24,7 @@ const UsernameMenu = () => {
             to="/manage-restaurant"
             className="font-bold hover:text-orange-500"
           >
-            Manage Restaurant
+            My Restaurant
           </Link>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -36,7 +36,7 @@ const UsernameMenu = () => {
         <DropdownMenuItem>
           <Button
             onClick={() => logout()}
-            className="flex flex-1 font-bold bg-orange-500"
+            className="flex flex-1 font-bold bg-orange-500 text-white hover:bg-zinc-800"
           >
             Log Out
           </Button>

@@ -54,7 +54,7 @@ const MenuItemInput = ({ index, removeMenuItem }: Props) => {
       <Button
         type="button"
         onClick={removeMenuItem}
-        className="bg-red-500 max-h-fit"
+        className="bg-red-500 max-h-fit hover:bg-red-500/80"
       >
         Remove
       </Button>
