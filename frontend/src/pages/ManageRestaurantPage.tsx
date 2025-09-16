@@ -4,6 +4,7 @@ import {
   useGetMyRestaurant,
   useUpdateMyRestaurant,
 } from "@/api/MyRestaurantApi";
+
 const ManageRestaurantPage = () => {
   const { createRestaurant, isPending: isCreatePending } =
     useCreateMyRestaurant();
