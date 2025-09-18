@@ -21,7 +21,7 @@ const orderSchema = new mongoose.Schema({
     type: String,
     enum: ["placed", "paid", "inProgress", "outForDelivery", "delivered"],
   },
-  createAt: { type: Date, default: Date.now },
+  createdAt: { type: Date, default: Date.now },
 });
 
 const Order = mongoose.model("Order", orderSchema);
